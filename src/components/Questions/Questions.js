@@ -8,22 +8,20 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const Questions = ({ questions }) => {
-    const {question, options } = questions;
-    const correctAnswer = () => {
-        toast.success(questions.correctAnswer, {
+    const {question, options, correctAnswer} = questions;
+
+    const rightAnswer = () => {
+        toast.success(correctAnswer, {
             position: toast.POSITION.TOP_CENTER
         });
     };
-    
-    // const correctAnswer = () =>{
-    //     alert(questions.correctAnswer);
-    // }
 
+    
     return (
         <div className='border-gray-100 border-2 mb-3 p-6'>
             <div className='flex justify-between'>
                 <h2 className='text-2xl mb-5 w-11/12 text-center'>{question}</h2>
-                <FontAwesomeIcon onClick={()=> correctAnswer()} className='mt-2' icon={faEye} />
+                <FontAwesomeIcon onClick={()=> rightAnswer()} className='mt-2' icon={faEye} />
                 <ToastContainer />
             </div>
             <div className='grid grid-cols-2 gap-4 text-start'>
@@ -31,6 +29,7 @@ const Questions = ({ questions }) => {
                     options.map((option, idx )=> <QuestionOptions
                        key={idx}
                         option={option}
+                        correctAnswer={correctAnswer}
                     ></QuestionOptions>)
                 }
             </div>
