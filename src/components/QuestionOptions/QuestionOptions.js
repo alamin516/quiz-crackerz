@@ -5,23 +5,24 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const QuestionOptions = ({ option, correctAnswer, question }) => {
 
-    const answerC = () =>{
-        if(correctAnswer === option){
-                toast.success('Correct: ' + correctAnswer, {
-                    position: toast.POSITION.TOP_CENTER
-                });
-        }else{
-            toast.success('Incorrect Answer', {
+
+    const answerC = () => {
+        if (correctAnswer === option) {
+            toast.success('Correct', {
+                position: toast.POSITION.TOP_CENTER
+            })
+        } else {
+            toast.success('Incorrect', {
                 position: toast.POSITION.TOP_CENTER
             });
         }
-        
+
     }
 
     return (
-        <div onClick={answerC}>
-              <label className='flex items-center md:text-xl md:w-full border-gray-100 border-2 rounded-md p-3'><input className='w-6 h-6 mr-2' type="radio" name={question}/> {option}</label>
-             <ToastContainer></ToastContainer>
+        <div className="flex items-center md:w-full border-gray-100 border-2 rounded-md ">
+            <label onClick={()=> answerC()} className='flex w-full items-center md:text-xl p-3 hover:bg-blue-100 transition-all duration-500  cursor-pointer'><input className='w-16 h-6 mr-2' type="radio" name={question} /> <p className='w-10/12'>{option}</p></label>
+            <ToastContainer/>
         </div>
     );
 };

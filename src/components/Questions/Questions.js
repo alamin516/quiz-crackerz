@@ -18,10 +18,10 @@ const Questions = ({ questions }) => {
 
     
     return (
-        <div className='border-2 border-gray-300 rounded-md bg-clip bg-gradient-to-r from-[#1da1f2] to-blue-600 mb-3 p-6'>
+        <div className='rounded-lg bg-clip bg-gradient-to-r from-[#1da1f2] to-blue-600 mb-3 p-6 mx-3'>
             <div className='flex justify-between'>
                 <h2 className='md:text-2xl text-xl mb-5 w-11/12 text-left'>{question}</h2>
-                <FontAwesomeIcon onClick={()=> rightAnswer()} className='mt-2' icon={faEye} />
+                <FontAwesomeIcon onClick={rightAnswer} className='mt-2' icon={faEye} />
                 <ToastContainer />
             </div>
             <div className='grid md:grid-cols-2 gap-4 text-start'>
