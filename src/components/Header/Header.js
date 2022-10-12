@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark, faHamburger } from '@fortawesome/free-solid-svg-icons';
+import { faXmark, faBars } from '@fortawesome/free-solid-svg-icons';
 import './Header.css'
 
 const Header = () => {
@@ -15,7 +15,7 @@ const Header = () => {
             <div className='w-2/12'>
                 <div onClick={() => setOpen(!open)} className="h-8 w-8 text-black-500 md:hidden" >
                     {
-                        open ? <FontAwesomeIcon icon={faXmark}></FontAwesomeIcon> : <FontAwesomeIcon icon={faHamburger}></FontAwesomeIcon>}
+                        open ? <FontAwesomeIcon icon={faXmark}></FontAwesomeIcon> : <FontAwesomeIcon icon={faBars}></FontAwesomeIcon>}
                 </div>
             </div>
             <div className={`item md:flex justify-center absolute md:static  duration-500 ${open ? 'top-12' : 'top-[-160px]'}`}>
