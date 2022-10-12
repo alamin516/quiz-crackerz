@@ -3,7 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-const QuestionOptions = ({ option, correctAnswer }) => {
+const QuestionOptions = ({ option, correctAnswer, question }) => {
 
     const answerC = () =>{
         if(correctAnswer === option){
@@ -19,8 +19,8 @@ const QuestionOptions = ({ option, correctAnswer }) => {
     }
 
     return (
-        <div onClick={answerC} className='border-gray-100 border-2 flex items-center p-3'>
-             <input className='w-6 h-6' type="radio"/> <label className='text-xl w-96 ml-2'>{option}</label>
+        <div onClick={answerC}>
+              <label className='flex items-center md:text-xl md:w-full border-gray-100 border-2 rounded-md p-3'><input className='w-6 h-6 mr-2' type="radio" name={question}/> {option}</label>
              <ToastContainer></ToastContainer>
         </div>
     );
